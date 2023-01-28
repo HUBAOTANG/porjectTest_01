@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let num = 0;
+        let str = "***h****hello**h***hello";
+        const hello = ()=> {
+            let index = str.indexOf("hello");
+            console.log(index)
+            while(index !== -1) {
+                num++;
+                index = str.indexOf("hello", index+5);
+            }
+        }
+        hello();
+        console.log("hello出现的次数为"+num)
+        //统计字符串中的每个字符串的次数
+        let strObj = {};
+        let str1 = "helloWorld";
+        const strCount = () => {
+            const len = str1.length;
+            for (let i =0; i<len; i++) {
+                let strTamp = str1[i]
+                if (strObj[strTamp]) {
+                    strObj[strTamp]++;
+                }else {
+                    strObj[strTamp]=1;
+                }
+           }
+        }
+        strCount();
+        console.log(strObj)
+        //判断出现了多少次
+        let max = 0;
+        let char = '';
+        for (let i in strObj) {
+            if (strObj[i] > max) {
+                max = strObj[i]
+                char = i;
+            }
+        }
+        console.log(char+":"+max)
+    </script> 
+</body>
+</html>
